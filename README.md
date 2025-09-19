@@ -28,4 +28,4 @@ Criar uma presença digital simples, organizada e funcional para o Rancho do Bi�
 ## ▶️ Como executar
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/rancho-bi.git
+   git clone https://github.com/seu-usuario/rancho-bie.git
