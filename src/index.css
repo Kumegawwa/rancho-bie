@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rancho do Bié Design System - Cores rústicas e naturais */
+
+@layer base {
+  :root {
+    /* Cores de fundo - tons naturais */
+    --background: 35 25% 95%;
+    --foreground: 25 30% 15%;
+
+    /* Cards com tons de madeira clara */
+    --card: 35 20% 98%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 35 20% 98%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primária - marrom terra */
+    --primary: 25 50% 35%;
+    --primary-foreground: 35 25% 95%;
+
+    /* Secundária - tons de madeira */
+    --secondary: 30 25% 85%;
+    --secondary-foreground: 25 40% 25%;
+
+    /* Muted - tons neutros */
+    --muted: 30 20% 90%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent - laranja terroso */
+    --accent: 15 65% 65%;
+    --accent-foreground: 35 25% 95%;
+
+    /* Cor de destaque para promoções */
+    --promo: 10 70% 55%;
+    --promo-foreground: 35 25% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 25% 95%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 88%;
+    --ring: 25 50% 35%;
+
+    /* Gradientes rústicos */
+    --gradient-wood: linear-gradient(135deg, hsl(30 40% 75%), hsl(25 35% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 25% 95%), hsl(30 20% 88%));
+    --gradient-promo: linear-gradient(135deg, hsl(10 70% 55%), hsl(15 65% 65%));
+
+    /* Sombras naturais */
+    --shadow-wood: 0 4px 20px hsl(25 30% 15% / 0.15);
+    --shadow-card: 0 2px 10px hsl(25 30% 15% / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Modo escuro rústico para eventuais futuras implementações */
+  .dark {
+    --background: 25 35% 8%;
+    --foreground: 35 25% 95%;
+    --card: 25 30% 12%;
+    --card-foreground: 35 25% 95%;
+    --popover: 25 30% 12%;
+    --popover-foreground: 35 25% 95%;
+    --primary: 15 65% 65%;
+    --primary-foreground: 25 35% 8%;
+    --secondary: 25 25% 20%;
+    --secondary-foreground: 35 25% 95%;
+    --muted: 25 25% 18%;
+    --muted-foreground: 30 15% 70%;
+    --accent: 15 65% 65%;
+    --accent-foreground: 25 35% 8%;
+    --promo: 10 70% 55%;
+    --promo-foreground: 35 25% 95%;
+    --border: 25 25% 22%;
+    --input: 25 25% 22%;
+    --ring: 15 65% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
