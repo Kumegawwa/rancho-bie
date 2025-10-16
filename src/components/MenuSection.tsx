@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Utensils, Beer, ChefHat } from 'lucide-react';
+import { Utensils, Beer, ChefHat, Hamburger } from 'lucide-react';
 
 const menuItems = {
   porcoes: [
@@ -24,6 +24,14 @@ const menuItems = {
     { name: 'Carne de Onça 400g', price: 'R$ 50,00', description: '' },
     { name: 'Mini Churros 500g', price: 'R$ 30,00', description: '' }
   ],
+  burgers: [
+    { name: "Rancho Kids", price: "R$ 10,00", description: "Pão Brioche, Hambúrguer 100g e Maionese Rancho" },
+    { name: "Rancho Burguer", price: "R$ 12,00", description: "Pão Brioche, Hambúrguer 100g, Maionese Rancho e Queijo Cheddar" },
+    { name: "Rancho Salad", price: "R$ 15,00", description: "Pão Brioche, Hambúrguer 100g, Maionese Rancho, Picles, Alface, Tomate e Queijo Cheddar" },
+    { name: "Rancho Bacon", price: "R$ 20,00", description: "Pão Brioche, Hambúrguer 100g, Maionese Rancho, Picles, Alface, Tomate, Bacon e Queijo Cheddar" },
+    { name: "Rancho Onion Bacon", price: "R$ 25,00", description: "Pão Brioche, Hambúrguer 100g, Maionese Rancho, Picles, Alface, Tomate, Cebola Crocante e Bacon" },
+    { name: "Rancho Bacon Duplo", price: "R$ 25,00", description: "Pão Brioche, 2 Hambúrgueres 100g, Maionese Rancho, Picles, Alface, Tomate, Bacon e Queijo Cheddar" }
+  ],
   bebidas: [
     { name: "Chopp Pilsen", price: "R$ 8,00", description: "300ml - Chopp gelado e cremoso" },
     { name: "Cerveja Long Neck", price: "R$ 6,50", description: "Várias marcas disponíveis" },
@@ -45,7 +53,7 @@ const MenuSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Porções */}
           <Card className="shadow-card border-border bg-card">
             <CardHeader className="text-center">
@@ -88,8 +96,31 @@ const MenuSection = () => {
             </CardContent>
           </Card>
 
-          {/* Bebidas - Span full width */}
-          <Card className="shadow-card border-border bg-card md:col-span-2">
+          {/* Burgers */}
+          <Card className="shadow-card border-border bg-card">
+            <CardHeader className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <Hamburger className="h-8 w-8 text-accent" />
+              </div>
+              <CardTitle className="font-ranch text-2xl text-primary">Burgers</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {menuItems.burgers.map((item, index) => (
+                <div key={index} className="border-b border-border pb-3 last:border-b-0">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
+                    <span className="font-rustic font-bold text-accent">{item.price}</span>
+                  </div>
+                  <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Bebidas */}
+        <div className="mt-8">
+          <Card className="shadow-card border-border bg-card">
             <CardHeader className="text-center">
               <div className="flex items-center justify-center mb-4">
                 <Beer className="h-8 w-8 text-accent" />
@@ -97,14 +128,14 @@ const MenuSection = () => {
               <CardTitle className="font-ranch text-2xl text-primary">Bebidas & Chopp</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {menuItems.bebidas.map((item, index) => (
-                  <div key={index} className="border-b border-border pb-3 last:border-b-0 md:last:border-b">
+                  <div key={index} className="border-b border-border pb-3 last:border-b-0 md:border-b-0">
                     <div className="flex justify-between items-start mb-1">
                       <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
                       <span className="font-rustic font-bold text-accent">{item.price}</span>
                     </div>
-                    {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
+                    <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -114,7 +145,7 @@ const MenuSection = () => {
 
         <div className="text-center mt-8">
           <p className="font-rustic text-muted-foreground">
-            * Os preços podem sofrer alterações sem aviso prévio
+            * Os preços podem sofrer alterações sem aviso prévio.
           </p>
         </div>
       </div>

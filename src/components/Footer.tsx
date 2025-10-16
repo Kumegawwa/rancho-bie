@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Logo e Info */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start">
             <div className="flex items-center justify-center md:justify-start mb-4">
               <img 
                 src={logoRancho} 
@@ -17,12 +17,12 @@ const Footer = () => {
               <div>
                 <h3 className="font-ranch font-bold text-xl">Rancho do Bié</h3>
                 <p className="font-rustic text-sm text-primary-foreground/80">
-                  Restaurante Bar e Petiscaria
+                  Restaurante & Bar
                 </p>
               </div>
             </div>
             <p className="font-rustic text-primary-foreground/80 mb-4">
-              Sabores autênticos em um ambiente acolhedor. Venha experimentar nossa culinária caseira e nosso atendimento especial.
+              Sabores autênticos em um ambiente acolhedor. Venha experimentar nossa culinária e nosso atendimento especial.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ const Footer = () => {
               <p>📍 Rua Gabriel Pucka, 139</p>
               <p>Tranqueira, Almirante Tamandaré - PR</p>
               <p>📞 (41) 8801-6046</p>
-              <p>🕒 Seg-Dom: Consulte horários</p>
+              <p>🕒 Seg-Qui: 17h-23h | Sex-Sáb: 17h-00h | Dom: 11h-22h</p>
             </div>
           </div>
 
@@ -42,14 +42,18 @@ const Footer = () => {
             <h4 className="font-rustic font-bold text-lg mb-4">Siga-nos</h4>
             <div className="flex justify-center md:justify-start space-x-4 mb-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/ranchodobie?igsh=aXI0YnQwazF2N2Z4" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="bg-primary-foreground/10 hover:bg-primary-foreground/20 p-3 rounded-full transition-all duration-300 hover:scale-110"
                 aria-label="Instagram do Rancho do Bié"
               >
                 <Instagram className="h-6 w-6" />
               </a>
               <a 
-                href="#" 
+                href="https://www.facebook.com/149235202375260?ref=_xav_ig_profile_page_web" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="bg-primary-foreground/10 hover:bg-primary-foreground/20 p-3 rounded-full transition-all duration-300 hover:scale-110"
                 aria-label="Facebook do Rancho do Bié"
               >
@@ -57,7 +61,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="font-rustic text-primary-foreground/80 text-sm">
-              Acompanhe nossas novidades e promoções especiais nas redes sociais!
+              Acompanhe nossas novidades e promoções!
             </p>
           </div>
         </div>
@@ -66,9 +70,9 @@ const Footer = () => {
 
         <div className="text-center">
           <p className="font-rustic text-primary-foreground/80 flex items-center justify-center">
-            © 2024 Rancho do Bié. Todos os direitos reservados. 
+            © 2025 Rancho do Bié. Todos os direitos reservados. 
             <span className="ml-2 flex items-center">
-              Feito com <Heart className="h-4 w-4 mx-1 text-accent" /> para nossos clientes
+              Feito com <Heart className="h-4 w-4 mx-1 text-accent" /> para nossos clientes.
             </span>
           </p>
         </div>
