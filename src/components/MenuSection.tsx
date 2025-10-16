@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Utensils, Beer, ChefHat, Hamburger } from 'lucide-react';
+import { Utensils, Beer, ChefHat, Burger } from 'lucide-react'; // CORREÇÃO AQUI: 'Hamburger' foi trocado por 'Burger'
 
 const menuItems = {
   porcoes: [
@@ -100,7 +100,7 @@ const MenuSection = () => {
           <Card className="shadow-card border-border bg-card">
             <CardHeader className="text-center">
               <div className="flex items-center justify-center mb-4">
-                <Hamburger className="h-8 w-8 text-accent" />
+                <Burger className="h-8 w-8 text-accent" />
               </div>
               <CardTitle className="font-ranch text-2xl text-primary">Burgers</CardTitle>
             </CardHeader>
