@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import logoRancho from '@/assets/logo-rancho.png';
 import { Menu, X } from 'lucide-react';
-import useMobile from '@/hooks/use-mobile';
+// CORREÇÃO: A importação agora usa chaves {} para corresponder à exportação nomeada.
+import { useMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const isMobile = useMobile();
