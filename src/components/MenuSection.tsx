@@ -1,18 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Utensils, Coffee, Beer, ChefHat } from 'lucide-react';
+import { Utensils, Beer, ChefHat } from 'lucide-react';
 
 const menuItems = {
   porcoes: [
-    { name: "Porção de Frango à Passarinho", price: "R$ 35,00", description: "Frango temperado e frito, acompanha batata frita" },
-    { name: "Porção de Pastéis Variados", price: "R$ 28,00", description: "Pastéis de carne, queijo e frango (10 unidades)" },
-    { name: "Porção de Calabresa Acebolada", price: "R$ 32,00", description: "Calabresa grelhada com cebola roxa" },
-    { name: "Porção de Mandioca Frita", price: "R$ 25,00", description: "Mandioca crocante com molho especial" }
+    { name: 'Batata 500g', price: 'R$ 20,00', description: '' },
+    { name: 'Batata Bacon c/ Cheddar 500g', price: 'R$ 40,00', description: '' },
+    { name: 'Calabresa Acebolada 500g', price: 'R$ 30,00', description: '' },
+    { name: 'Coração Acebolado 500g', price: 'R$ 40,00', description: '' },
+    { name: 'Aipim com Bacon 500g', price: 'R$ 30,00', description: '' },
+    { name: 'Polenta com Queijo 500g', price: 'R$ 30,00', description: '' },
+    { name: 'Anel de Cebola 500g', price: 'R$ 30,00', description: '' },
+    { name: 'Frango Crocante 500g', price: 'R$ 30,00', description: '' },
+    { name: 'Frango Passarinho 600g', price: 'R$ 29,00', description: '' },
+    { name: 'Nuggets 500g', price: 'R$ 35,00', description: '' },
+    { name: 'Tilápia 400g', price: 'R$ 40,00', description: '' },
+    { name: 'Bolinho de Carne 600g', price: 'R$ 40,00', description: '' },
   ],
   pratos: [
-    { name: "Filé de Peixe Grelhado", price: "R$ 42,00", description: "Acompanha arroz, feijão, salada e batata frita" },
-    { name: "Bife à Parmegiana", price: "R$ 48,00", description: "Bife empanado com molho de tomate e queijo" },
-    { name: "Feijoada Completa", price: "R$ 45,00", description: "Sábados - Feijoada tradicional com acompanhamentos" },
-    { name: "Prato Executivo do Dia", price: "R$ 28,00", description: "Consulte as opções do dia" }
+    { name: 'Filé Acebolado s/ Osso 500g', price: 'R$ 45,00', description: '' },
+    { name: 'Filé Completo 1,4kg', price: 'R$ 100,00', description: 'Filé, Batata, Coração e Polenta' },
+    { name: 'Porção Rancho 1kg', price: 'R$ 90,00', description: 'Batata, Anéis de Cebola, Coração e Frango' },
+    { name: 'Prato de Frios 500g', price: 'R$ 40,00', description: 'Queijo, Salame, Pepino e Azeitonas' },
+    { name: 'Carne de Onça 400g', price: 'R$ 50,00', description: '' },
+    { name: 'Mini Churros 500g', price: 'R$ 30,00', description: '' }
   ],
   bebidas: [
     { name: "Chopp Pilsen", price: "R$ 8,00", description: "300ml - Chopp gelado e cremoso" },
@@ -51,7 +61,7 @@ const MenuSection = () => {
                     <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
                     <span className="font-rustic font-bold text-accent">{item.price}</span>
                   </div>
-                  <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
+                  {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
                 </div>
               ))}
             </CardContent>
@@ -72,7 +82,7 @@ const MenuSection = () => {
                     <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
                     <span className="font-rustic font-bold text-accent">{item.price}</span>
                   </div>
-                  <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
+                  {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
                 </div>
               ))}
             </CardContent>
@@ -94,7 +104,7 @@ const MenuSection = () => {
                       <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
                       <span className="font-rustic font-bold text-accent">{item.price}</span>
                     </div>
-                    <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
+                    {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
                   </div>
                 ))}
               </div>
