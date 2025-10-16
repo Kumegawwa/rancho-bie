@@ -2,81 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Rancho do Bié Design System - Cores rústicas e naturais */
-
 @layer base {
   :root {
-    /* Cores de fundo - tons naturais */
-    --background: 35 25% 95%;
-    --foreground: 25 30% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Cards com tons de madeira clara */
-    --card: 35 20% 98%;
-    --card-foreground: 25 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 35 20% 98%;
-    --popover-foreground: 25 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primária - marrom terra */
-    --primary: 25 50% 35%;
-    --primary-foreground: 35 25% 95%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Secundária - tons de madeira */
-    --secondary: 30 25% 85%;
-    --secondary-foreground: 25 40% 25%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    /* Muted - tons neutros */
-    --muted: 30 20% 90%;
-    --muted-foreground: 25 20% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Accent - laranja terroso */
-    --accent: 15 65% 65%;
-    --accent-foreground: 35 25% 95%;
-
-    /* Cor de destaque para promoções */
-    --promo: 10 70% 55%;
-    --promo-foreground: 35 25% 95%;
+    --accent: 346.8 77.2% 49.8%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 35 25% 95%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 88%;
-    --ring: 25 50% 35%;
-
-    /* Gradientes rústicos */
-    --gradient-wood: linear-gradient(135deg, hsl(30 40% 75%), hsl(25 35% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(35 25% 95%), hsl(30 20% 88%));
-    --gradient-promo: linear-gradient(135deg, hsl(10 70% 55%), hsl(15 65% 65%));
-
-    /* Sombras naturais */
-    --shadow-wood: 0 4px 20px hsl(25 30% 15% / 0.15);
-    --shadow-card: 0 2px 10px hsl(25 30% 15% / 0.1);
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
   }
 
-  /* Modo escuro rústico para eventuais futuras implementações */
   .dark {
-    --background: 25 35% 8%;
-    --foreground: 35 25% 95%;
-    --card: 25 30% 12%;
-    --card-foreground: 35 25% 95%;
-    --popover: 25 30% 12%;
-    --popover-foreground: 35 25% 95%;
-    --primary: 15 65% 65%;
-    --primary-foreground: 25 35% 8%;
-    --secondary: 25 25% 20%;
-    --secondary-foreground: 35 25% 95%;
-    --muted: 25 25% 18%;
-    --muted-foreground: 30 15% 70%;
-    --accent: 15 65% 65%;
-    --accent-foreground: 25 35% 8%;
-    --promo: 10 70% 55%;
-    --promo-foreground: 35 25% 95%;
-    --border: 25 25% 22%;
-    --input: 25 25% 22%;
-    --ring: 15 65% 65%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 346.8 77.2% 49.8%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -84,13 +70,15 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    /* Adiciona um fundo com textura sutil para um visual mais rústico */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  
+
+  /* Efeito de Parallax para a Hero Section */
   .hero-background {
-    background-image: url('/src/assets/images/prato-chuleta.jpg');
+    background-image: url('/src/assets/images/prato-chuleta.jpg'); /* ⚠️ Recomendo substituir por uma foto profissional */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

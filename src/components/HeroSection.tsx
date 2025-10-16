@@ -1,50 +1,50 @@
 import { Button } from '@/components/ui/button';
-import { MapPin, Sparkles } from 'lucide-react';
-import logoRancho from '@/assets/logo-rancho.png';
+import { MapPin, UtensilsCrossed } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative bg-gradient-hero py-16 md:py-24 hero-background">
-      <div className="absolute inset-0 bg-black/30"></div>
-      <div className="container relative mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <img 
-              src={logoRancho} 
-              alt="Rancho do Bié Logo" 
-              className="h-32 md:h-40 w-auto mx-auto mb-6 drop-shadow-lg"
-            />
-            <h1 className="font-ranch font-bold text-4xl md:text-6xl text-white drop-shadow-md mb-4">
-              Rancho do Bié
-            </h1>
-            <p className="font-rustic text-xl md:text-2xl text-white/90 drop-shadow-sm mb-6">
-              O sabor autêntico da culinária rústica em um ambiente acolhedor.
-            </p>
-          </div>
-          
-          <div className="bg-card/90 backdrop-blur-sm rounded-lg shadow-wood p-6 mb-8">
-            <div className="flex items-center justify-center mb-4">
-              <Sparkles className="h-5 w-5 text-accent mr-2" />
-              <p className="font-rustic text-lg text-card-foreground">
-                Porções, Hambúrgueres, Almoço e Happy Hour!
-              </p>
-            </div>
-            
-            <div className="flex items-center justify-center text-muted-foreground">
-              <MapPin className="h-5 w-5 mr-2" />
-              <p className="font-rustic">
-                Rua Gabriel Pucka, 139 - Tranqueira, Almirante Tamandaré - PR
-              </p>
-            </div>
+    // A classe `hero-background` agora aplica um efeito parallax definido em `index.css`
+    <section id="inicio" className="relative hero-background text-white pt-20">
+      {/* Overlay para melhorar a legibilidade do texto */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+      <div className="relative container mx-auto px-4 py-24 md:py-32 text-center z-10">
+        <div className="max-w-3xl mx-auto">
+          {/* Tagline rústica */}
+          <div className="mb-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 font-rustic text-sm">
+              <UtensilsCrossed className="h-4 w-4" />
+              Culinária Rústica & Sabor Autêntico
+            </span>
           </div>
 
-          <Button 
-            size="lg" 
-            className="font-rustic font-semibold text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-wood transition-all duration-300 hover:scale-105"
+          {/* Título principal com a fonte da marca */}
+          <h1 className="font-ranch font-bold text-5xl md:text-7xl text-white drop-shadow-lg mb-4 leading-tight">
+            O Verdadeiro Sabor do Rancho
+          </h1>
+
+          {/* Descrição mais elegante */}
+          <p className="font-rustic text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow-md">
+            Porções generosas, carnes nobres e um ambiente acolhedor para reunir quem você ama.
+          </p>
+
+          {/* Botão de Ação Principal */}
+          <Button
+            size="lg"
+            className="font-rustic font-semibold text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground shadow-wood transition-all duration-300 transform hover:scale-105"
             onClick={() => window.open('https://wa.me/554188016046', '_blank')}
+            aria-label="Peça pelo WhatsApp"
           >
-            Peça pelo WhatsApp
+            Faça seu Pedido
           </Button>
+
+          {/* Endereço (opcional, para reforçar localização) */}
+          <div className="mt-8 flex items-center justify-center text-white/70">
+            <MapPin className="h-4 w-4 mr-2" />
+            <p className="font-rustic text-sm">
+              Almirante Tamandaré - PR
+            </p>
+          </div>
         </div>
       </div>
     </section>

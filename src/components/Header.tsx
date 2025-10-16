@@ -1,79 +1,82 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import logoRancho from '@/assets/logo-rancho.png';
-import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-
-const navLinks = [
-  { href: '#inicio', label: 'Início' },
-  { href: '#cardapio', label: 'Cardápio' },
-  { href: '#promocoes', label: 'Promoções' },
-  { href: '#contato', label: 'Contato' },
-];
+import { Menu, X } from 'lucide-react';
+import useMobile from '@/hooks/use-mobile';
 
 const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useMobile();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#inicio', label: 'Início' },
+    { href: '#cardapio', label: 'Cardápio' },
+    { href: '#promocoes', label: 'Promoções' },
+    { href: '#contato', label: 'Contato' },
+  ];
+
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setMenuOpen(false);
+    }
+  };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-border shadow-card">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-3">
-          {/* Logo */}
-          <a href="#inicio" className="flex items-center space-x-3">
-            <img 
-              src={logoRancho} 
-              alt="Rancho do Bié Logo" 
-              className="h-12 w-auto"
-            />
-            <div className="hidden sm:block">
-              <h1 className="font-ranch font-bold text-xl text-primary">
-                Rancho do Bié
-              </h1>
-              <p className="font-rustic text-sm text-muted-foreground">
-                Restaurante & Bar
-              </p>
-            </div>
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-sm shadow-md">
+      <div className="container mx-auto px-4 flex justify-between items-center h-20">
+        <a href="#inicio" className="flex items-center">
+          <img src={logoRancho} alt="Rancho do Bié Logo" className="h-14 w-auto" />
+        </a>
 
-          {/* Navegação para Desktop */}
-          <nav className="hidden md:flex items-center space-x-6">
+        {isMobile ? (
+          <Button variant="ghost" size="icon" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+          </Button>
+        ) : (
+          <nav className="flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-rustic font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="font-ranch text-lg text-white hover:text-accent transition-colors"
               >
                 {link.label}
               </a>
             ))}
+            <Button
+              className="font-rustic font-semibold bg-accent hover:bg-accent/90"
+              onClick={() => window.open('https://wa.me/554188016046', '_blank')}
+            >
+              Peça Agora
+            </Button>
           </nav>
+        )}
 
-          {/* Botão de Menu para Mobile */}
-          <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Abrir menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[280px]">
-                <div className="flex flex-col space-y-6 pt-10">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="font-ranch text-2xl text-primary transition-colors hover:underline"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+        {isMobile && menuOpen && (
+          <div className="absolute top-20 left-0 right-0 bg-primary shadow-lg p-4">
+            <nav className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-ranch text-lg text-white text-center py-2 hover:bg-white/10 rounded"
+                  onClick={handleLinkClick}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <Button
+                className="w-full font-rustic font-semibold bg-accent hover:bg-accent/90 mt-4"
+                onClick={() => {
+                  window.open('https://wa.me/554188016046', '_blank');
+                  handleLinkClick();
+                }}
+              >
+                Peça Agora
+              </Button>
+            </nav>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

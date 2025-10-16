@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Utensils, Beer, ChefHat } from 'lucide-react'; // Ícone problemático removido daqui
+import { Utensils, Beer, ChefHat, Sandwich } from 'lucide-react';
 
+// Dados do menu (inalterados)
 const menuItems = {
   porcoes: [
     { name: 'Batata 500g', price: 'R$ 20,00', description: '' },
@@ -40,6 +41,17 @@ const menuItems = {
   ]
 };
 
+// Componente reutilizável para cada item do menu
+const MenuItem = ({ name, price, description }: { name: string; price: string; description?: string }) => (
+  <div className="py-3 border-b border-dashed border-border/50 last:border-b-0">
+    <div className="flex justify-between items-start mb-1">
+      <h4 className="font-rustic font-semibold text-card-foreground pr-4">{name}</h4>
+      <span className="font-ranch font-bold text-accent text-lg whitespace-nowrap">{price}</span>
+    </div>
+    {description && <p className="font-rustic text-sm text-muted-foreground">{description}</p>}
+  </div>
+);
+
 const MenuSection = () => {
   return (
     <section id="cardapio" className="py-16 bg-background">
@@ -53,96 +65,57 @@ const MenuSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Porções */}
-          <Card className="shadow-card border-border bg-card">
-            <CardHeader className="text-center">
-              <div className="flex items-center justify-center mb-4">
-                <Utensils className="h-8 w-8 text-accent" />
-              </div>
-              <CardTitle className="font-ranch text-2xl text-primary">Porções</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {menuItems.porcoes.map((item, index) => (
-                <div key={index} className="border-b border-border pb-3 last:border-b-0">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
-                    <span className="font-rustic font-bold text-accent">{item.price}</span>
-                  </div>
-                  {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+        {/* Layout de duas colunas para o cardápio */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          {/* Coluna da Esquerda */}
+          <div className="space-y-8">
+            <Card className="shadow-card border-border/50 bg-card/50">
+              <CardHeader className="text-center">
+                <Utensils className="h-8 w-8 text-accent mx-auto mb-2" />
+                <CardTitle className="font-ranch text-2xl text-primary">Porções</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {menuItems.porcoes.map((item) => <MenuItem key={item.name} {...item} />)}
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card border-border/50 bg-card/50">
+              <CardHeader className="text-center">
+                <ChefHat className="h-8 w-8 text-accent mx-auto mb-2" />
+                <CardTitle className="font-ranch text-2xl text-primary">Pratos Principais</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {menuItems.pratos.map((item) => <MenuItem key={item.name} {...item} />)}
+              </CardContent>
+            </Card>
+          </div>
 
-          {/* Pratos Principais */}
-          <Card className="shadow-card border-border bg-card">
-            <CardHeader className="text-center">
-              <div className="flex items-center justify-center mb-4">
-                <ChefHat className="h-8 w-8 text-accent" />
-              </div>
-              <CardTitle className="font-ranch text-2xl text-primary">Pratos Principais</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {menuItems.pratos.map((item, index) => (
-                <div key={index} className="border-b border-border pb-3 last:border-b-0">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
-                    <span className="font-rustic font-bold text-accent">{item.price}</span>
-                  </div>
-                  {item.description && <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>}
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+          {/* Coluna da Direita */}
+          <div className="space-y-8">
+            <Card className="shadow-card border-border/50 bg-card/50">
+              <CardHeader className="text-center">
+                <Sandwich className="h-8 w-8 text-accent mx-auto mb-2" />
+                <CardTitle className="font-ranch text-2xl text-primary">Burgers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {menuItems.burgers.map((item) => <MenuItem key={item.name} {...item} />)}
+              </CardContent>
+            </Card>
 
-          {/* Burgers */}
-          <Card className="shadow-card border-border bg-card">
-            <CardHeader className="text-center">
-              {/* Ícone removido daqui */}
-              <CardTitle className="font-ranch text-2xl text-primary mt-8">Burgers</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {menuItems.burgers.map((item, index) => (
-                <div key={index} className="border-b border-border pb-3 last:border-b-0">
-                  <div className="flex justify-between items-start mb-1">
-                    <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
-                    <span className="font-rustic font-bold text-accent">{item.price}</span>
-                  </div>
-                  <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+            <Card className="shadow-card border-border/50 bg-card/50">
+              <CardHeader className="text-center">
+                <Beer className="h-8 w-8 text-accent mx-auto mb-2" />
+                <CardTitle className="font-ranch text-2xl text-primary">Bebidas & Chopp</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {menuItems.bebidas.map((item) => <MenuItem key={item.name} {...item} />)}
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
-        {/* Bebidas */}
-        <div className="mt-8">
-          <Card className="shadow-card border-border bg-card">
-            <CardHeader className="text-center">
-              <div className="flex items-center justify-center mb-4">
-                <Beer className="h-8 w-8 text-accent" />
-              </div>
-              <CardTitle className="font-ranch text-2xl text-primary">Bebidas & Chopp</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {menuItems.bebidas.map((item, index) => (
-                  <div key={index} className="border-b border-border pb-3 last:border-b-0 md:border-b-0">
-                    <div className="flex justify-between items-start mb-1">
-                      <h4 className="font-rustic font-semibold text-card-foreground">{item.name}</h4>
-                      <span className="font-rustic font-bold text-accent">{item.price}</span>
-                    </div>
-                    <p className="font-rustic text-sm text-muted-foreground">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="text-center mt-8">
-          <p className="font-rustic text-muted-foreground">
+        <div className="text-center mt-12">
+          <p className="font-rustic text-sm text-muted-foreground">
             * Os preços podem sofrer alterações sem aviso prévio.
           </p>
         </div>
