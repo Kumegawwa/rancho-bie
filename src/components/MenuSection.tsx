@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Utensils, Beer, ChefHat, Hamburger } from 'lucide-react'; // CORREÇÃO FINAL: Voltamos para 'Hamburger'
+import { Utensils, Beer, ChefHat } from 'lucide-react'; // Ícone problemático removido daqui
 
 const menuItems = {
   porcoes: [
@@ -99,10 +99,8 @@ const MenuSection = () => {
           {/* Burgers */}
           <Card className="shadow-card border-border bg-card">
             <CardHeader className="text-center">
-              <div className="flex items-center justify-center mb-4">
-                <Hamburger className="h-8 w-8 text-accent" />
-              </div>
-              <CardTitle className="font-ranch text-2xl text-primary">Burgers</CardTitle>
+              {/* Ícone removido daqui */}
+              <CardTitle className="font-ranch text-2xl text-primary mt-8">Burgers</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {menuItems.burgers.map((item, index) => (
