@@ -4,6 +4,7 @@ import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   return (
+    // CORREÇÃO: Fundo da seção agora usa 'secondary' (cinza quente)
     <section id="contato" className="py-16 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -15,7 +16,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <Card className="shadow-card border-border/50 bg-card/50 overflow-hidden">
+        <Card className="shadow-wood border-black/5 overflow-hidden">
           <div className="grid md:grid-cols-2">
             {/* Informações de Contato */}
             <div className="p-8">
@@ -58,7 +59,8 @@ const ContactSection = () => {
 
               <Button 
                 size="lg" 
-                className="w-full mt-8 font-rustic font-semibold text-lg bg-accent hover:bg-accent/90 text-accent-foreground shadow-sm"
+                // CORREÇÃO: Adicionada shadow-wood
+                className="w-full mt-8 font-rustic font-semibold text-lg bg-accent hover:bg-accent/90 text-accent-foreground shadow-wood"
                 onClick={() => window.open('https://wa.me/554188016046', '_blank')}
               >
                 <MessageCircle className="h-5 w-5 mr-2" />

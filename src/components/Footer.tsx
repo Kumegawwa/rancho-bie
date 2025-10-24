@@ -1,4 +1,4 @@
-import { Heart, Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import logoRancho from '@/assets/logo-rancho.png';
 
 const Footer = () => {
@@ -6,6 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    // CORREÇÃO: Rodapé agora usa a cor primária (marrom)
     <footer className="bg-primary text-primary-foreground border-t-4 border-accent/50">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
@@ -67,9 +68,8 @@ const Footer = () => {
           <p>
             © {currentYear} Rancho do Bié. Todos os direitos reservados. 
           </p>
-          <p className="mt-1 flex items-center justify-center">
-            Feito com <Heart className="h-4 w-4 mx-1.5 text-accent" /> para nossos clientes.
-          </p>
+          {/* REMOÇÃO: A linha "Feito com <3..." foi removida conforme solicitado.
+          */}
         </div>
       </div>
     </footer>

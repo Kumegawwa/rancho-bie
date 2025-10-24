@@ -4,55 +4,61 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* CORREÇÃO: Variáveis HSL atualizadas para a nova paleta.
+      Fundo e Card: Creme Quente (#fdfbf7)
+      Primário e Foreground: Marrom Escuro (#3e2723)
+      Secundário: Cinza Quente
+    */
+    --background: 38 71% 98%;
+    --foreground: 4 30% 19%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 38 71% 98%;
+    --card-foreground: 4 30% 19%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 38 71% 98%;
+    --popover-foreground: 4 30% 19%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 4 30% 19%;
+    --primary-foreground: 38 71% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 8% 90%; /* Cinza quente */
+    --secondary-foreground: 4 30% 19%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 8% 90%;
+    --muted-foreground: 4 30% 35%;
 
-    --accent: 346.8 77.2% 49.8%;
+    --accent: 346.8 77.2% 49.8%; /* Vermelho (mantido) */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 8% 85%; /* Borda de cinza quente */
+    --input: 30 8% 85%;
+    --ring: 4 30% 19%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Modo escuro (invertido) */
+    --background: 4 30% 19%;
+    --foreground: 38 71% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 4 30% 19%;
+    --card-foreground: 38 71% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 4 30% 19%;
+    --popover-foreground: 38 71% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 71% 98%;
+    --primary-foreground: 4 30% 19%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 8% 20%;
+    --secondary-foreground: 38 71% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 8% 20%;
+    --muted-foreground: 30 8% 60%;
 
     --accent: 346.8 77.2% 49.8%;
     --accent-foreground: 210 40% 98%;
@@ -60,9 +66,9 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 30 8% 25%;
+    --input: 30 8% 25%;
+    --ring: 38 71% 98%;
   }
 }
 
@@ -72,15 +78,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Adiciona um fundo com textura sutil para um visual mais rústico */
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    /* CORREÇÃO: A textura de fundo agora usa o tom de marrom (#3e2723) 
+       para criar um padrão sutil e quente. */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233e2723' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-
-  /* Efeito de Parallax para a Hero Section */
+  
   .hero-background {
-    background-image: url('/src/assets/images/prato-chuleta.jpg'); /* ⚠️ Recomendo substituir por uma foto profissional */
+    background-image: url('/src/assets/images/prato-chuleta.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Efeito parallax */
   }
 }

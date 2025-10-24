@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Utensils } from 'lucide-react';
-import promoAlmoco from '@/assets/images/promo-almoco.jpg'; // Imagem mantida, mas agora dentro de um Card
+import promoAlmoco from '@/assets/images/promo-almoco.jpg'; 
 
 const PromoSection = () => {
   return (
@@ -17,9 +17,9 @@ const PromoSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="shadow-card border-border/50 bg-card/50 overflow-hidden md:flex md:items-center">
+          {/* Card já usa shadow-wood (herdado de card.tsx) */}
+          <Card className="overflow-hidden md:flex md:items-center">
             <div className="md:w-1/2">
-              {/* ⚠️ Idealmente, use uma foto horizontal de alta qualidade aqui */}
               <img src={promoAlmoco} alt="Promoção de almoço no Rancho do Bié" className="w-full h-64 md:h-full object-cover" />
             </div>
             <div className="p-8 md:w-1/2">
@@ -43,8 +43,9 @@ const PromoSection = () => {
                   </div>
                 </div>
                 <Button 
-                  className="w-full font-rustic font-semibold bg-accent hover:bg-accent/90"
-                  onClick={() => document.getElementById('contato')?.scrollIntoView()}
+                  // CORREÇÃO: Adicionada shadow-wood
+                  className="w-full font-rustic font-semibold bg-accent hover:bg-accent/90 shadow-wood"
+                  onClick={() => document.getElementById('cardapio')?.scrollIntoView()}
                 >
                   Confira o Cardápio
                 </Button>
