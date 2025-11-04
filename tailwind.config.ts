@@ -23,12 +23,12 @@ const config = {
         rustic: ['"Cabin"', 'sans-serif'],
       },
       colors: {
-        // CORREÇÃO: O azul primário foi substituído por um marrom escuro (espresso/madeira).
+        // CORREÇÃO: Define a cor primária como um marrom escuro (espresso/madeira).
         primary: {
           DEFAULT: "#3e2723", // Tom de café/madeira escura
           foreground: "#fdfbf7", // Tom creme (para texto sobre o marrom)
         },
-        // CORREÇÃO: O fundo branco foi substituído por um creme quente.
+        // CORREÇÃO: Define o fundo como um creme quente.
         background: "#fdfbf7", // Tom creme/papel antigo
         foreground: "#3e2723", // Texto principal agora é o marrom escuro
         
@@ -38,10 +38,11 @@ const config = {
           foreground: "#3e2723",
         },
 
-        // Cores mantidas (vermelho do logo)
+        // NOVA COR DE DESTAQUE (ACCENT)
+        // Substitui o VERDE por um VERMELHO RÚSTICO, alinhado ao logo.
         accent: {
-          DEFAULT: "#dc2626",
-          foreground: "#ffffff",
+          DEFAULT: "#dc2626", // Vermelho (Tailwind red-600)
+          foreground: "#ffffff", // Texto branco sobre o vermelho
         },
         
         // Cores de UI (tons neutros)
@@ -72,7 +73,8 @@ const config = {
       },
       boxShadow: {
         'shadow-card': '0 2px 8px rgba(0, 0, 0, 0.05)',
-        'shadow-wood': '0 4px 12px rgba(85, 57, 4, 0.2)', // Sombra "quente"
+        // Sombra "quente" em tom de madeira
+        'shadow-wood': '0 4px 12px rgba(85, 57, 4, 0.2)', 
       },
       keyframes: {
         "accordion-down": {
