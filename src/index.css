@@ -7,7 +7,7 @@
     /* CORREÇÃO: Variáveis HSL atualizadas para a nova paleta.
       Fundo e Card: Creme Quente (#fdfbf7)
       Primário e Foreground: Marrom Escuro (#3e2723)
-      Secundário: Cinza Quente
+      Accent: Vermelho Rústico (#dc2626)
     */
     --background: 38 71% 98%;
     --foreground: 4 30% 19%;
@@ -27,8 +27,9 @@
     --muted: 30 8% 90%;
     --muted-foreground: 4 30% 35%;
 
-    --accent: 346.8 77.2% 49.8%; /* Vermelho (mantido) */
-    --accent-foreground: 210 40% 98%;
+    /* NOVA COR DE DESTAQUE (VERMELHO) */
+    --accent: 0 74% 51%; /* HSL para #dc2626 */
+    --accent-foreground: 0 0% 100%; /* HSL para #ffffff */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -60,8 +61,8 @@
     --muted: 30 8% 20%;
     --muted-foreground: 30 8% 60%;
 
-    --accent: 346.8 77.2% 49.8%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 74% 51%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
